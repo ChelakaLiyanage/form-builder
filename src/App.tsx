@@ -1,12 +1,9 @@
-import { Button } from "./components/ui/button"
+import { MainLayout } from "./components/main-layout"
 
 function App() {
   
-  return (<div className="h-screen w-screen">
-  <Button>Button</Button>
-  </div>
-    
-  )
+  return <MainLayout/>;
+
 }
 
 export default App
