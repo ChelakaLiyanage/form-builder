@@ -15,11 +15,14 @@ export interface WelcomeField {
   buttonText: string;
 }
 
-type SelectedStepId = "WELCOME" | number | null;
+type Preview = {
+  type: "WELCOME" | "STPE" | "NEW";
+  previewData: WelcomeField | FormStep;
+} | null;
 
 interface FormState {
-  selectedStepId: SelectedStepId;
-  setSelectedStepId: (selectedStepId: SelectedStepId) => void;
+  preview: Preview;
+  setPreview: (preview: Preview) => void;
   lastId: number;
   getNewId: () => number;
   welcomeField: WelcomeField;
@@ -32,9 +35,9 @@ interface FormState {
 export const useFormStore = create<FormState>()(
   persist(
     (set, get) => ({
-      selectedStepId: null,
-      setSelectedStepId(selectedStepId) {
-        set(() => ({ selectedStepId }));
+      preview:null,
+      setPreview:(preview) =>{
+        set(() => ({preview}))
       },
       lastId: 0,
       getNewId: () => {
@@ -88,7 +91,7 @@ export const useFormStore = create<FormState>()(
       partialize: (state) =>
         Object.fromEntries(
           Object.entries(state).filter(
-            ([key]) => !["selectedStepId"].includes(key)
+            ([key]) => !["preview"].includes(key)
           )
         ),
     }
