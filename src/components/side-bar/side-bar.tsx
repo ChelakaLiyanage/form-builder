@@ -2,6 +2,7 @@ import { useFormStore } from "@/store/form-store";
 import { Steps } from "./steps";
 import { Button } from "../ui/button";
 import { PlusIcon } from "lucide-react";
+import { PreviewEdit } from "./preview-edit";
 
 export function SideBar() {
   const preview = useFormStore((state) => state.preview);
@@ -13,9 +14,12 @@ export function SideBar() {
         <div className="px-4">
           <Steps />
         </div>
-        <Button className="mt-2"><PlusIcon className="mr-2 h-4 w-4"/>Email Field</Button>
+        <Button className="mt-2">
+          <PlusIcon className="mr-2 h-4 w-4" />
+          Email Field
+        </Button>
       </div>
     );
   }
-  return <div>Step Settings</div>;
+  return <PreviewEdit/>;
 }

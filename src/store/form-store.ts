@@ -16,7 +16,7 @@ export interface WelcomeField {
 }
 
 type Preview = {
-  type: "WELCOME" | "STPE" | "NEW";
+  type: "WELCOME" | "STEP" | "NEW";
   previewData: WelcomeField | FormStep;
 } | null;
 
