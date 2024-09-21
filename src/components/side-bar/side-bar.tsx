@@ -13,13 +13,13 @@ export function SideBar() {
         <h3 className="px-4 font-semibold text-sm mb-2 mt-2">Steps</h3>
         <div className="px-4">
           <Steps />
+          <Button className="mt-2">
+            <PlusIcon className="mr-2 h-4 w-4" />
+            Email Field
+          </Button>
         </div>
-        <Button className="mt-2">
-          <PlusIcon className="mr-2 h-4 w-4" />
-          Email Field
-        </Button>
       </div>
     );
   }
-  return <PreviewEdit/>;
+  return <PreviewEdit />;
 }
